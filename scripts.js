@@ -104,16 +104,6 @@ function swapCurrencies() {
     currencySelectTo.dispatchEvent(new Event('change'));
 }
 
-async function copyToClipboard() {
-    try {
-        await navigator.clipboard.writeText(lastConvertedValue);
-        alert("Valor copiado para a área de transferência!");
-    } catch (err) {
-        console.error('Falha ao copiar o valor: ', err);
-        alert("Não foi possível copiar o valor.");
-    }
-}
-
 function getFormattedDate(date) {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');

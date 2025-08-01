@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Conversor de Moedas</title>
+</head>
+
+<body>
+    <img class="logo" src="./assets/logo.png" alt="logo-convert-money">
+
+    <main autocomplete="off">
+        <label>
+            Converter <strong>de</strong>
+        </label>
+        <div class="select-container">
+            <label>
+                <select id="select-from">
+                    <option value="" disabled selected>Selecione uma moeda</option>
+                    <option value="cedi-ganes"> ₵ Cedi Ganês</option>
+                    <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
+                    <option value="dolar"> US$ Dólar Americano</option>
+                    <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
+                    <option value="euro"> € Euro</option>
+                    <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
+                    <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
+                    <option value="iene-japones"> ¥ Iene Japonês</option>
+                    <option value="kip-laociano"> ₭ Kip Laociano</option>
+                    <option value="lari-georgiano"> ₾ Lari Georgiano</option>
+                    <option value="libra"> £ Libra Esterlina</option>
+                    <option value="lira-turca"> ₺ Lira Turca</option>
+                    <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
+                    <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
+                    <option value="peso-argentino"> ₱ Peso Argentino</option>
+                    <option value="peso-filipino"> ₱ Peso Filipino</option>
+                    <option value="real"> R$ Real Brasileiro</option>
+                    <option value="riel-cambojano"> ៛ Riel Cambojano</option>
+                    <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
+                    <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
+                    <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
+                    <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
+                </select>
+            </label>
+            <img src="./assets/swap-icon.png" alt="Inverter moedas" id="swap-button" class="swap-button">
+
+             <label>
+            Converter <strong>para</strong>
+        </label>
+
+            <label>
+                <select id="select-to" class="select-conversao">
+                    <option value="" disabled selected>Selecione uma moeda</option>
+                    <option value="cedi-ganes"> ₵ Cedi Ganês</option>
+                    <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
+                    <option value="dolar"> US$ Dólar Americano</option>
+                    <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
+                    <option value="euro"> € Euro</option>
+                    <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
+                    <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
+                    <option value="iene-japones"> ¥ Iene Japonês</option>
+                    <option value="kip-laociano"> ₭ Kip Laociano</option>
+                    <option value="lari-georgiano"> ₾ Lari Georgiano</option>
+                    <option value="libra"> £ Libra Esterlina</option>
+                    <option value="lira-turca"> ₺ Lira Turca</option>
+                    <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
+                    <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
+                    <option value="peso-argentino"> ₱ Peso Argentino</option>
+                    <option value="peso-filipino"> ₱ Peso Filipino</option>
+                    <option value="real"> R$ Real Brasileiro</option>
+                    <option value="riel-cambojano"> ៛ Riel Cambojano</option>
+                    <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
+                    <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
+                    <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
+                    <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
+                </select>
+            </label>
+        </div>
+
+        <label for="input-value">
+            Valor
+            <input id="input-value" class="input-valor-conversao" type="number" placeholder="Digite o valor">
+        </label>
+
+        <button class="convert-button" type="button">Converter</button>
+
+        <p id="loading-message" class="loading-message"></p>
+
+        <section>
+            <div class="currency-box">
+                <img id="from-currency-image" class="currency-img" src="./assets/placeholder.png" alt="moeda-a-converter">
+                <p id="from-currency-name" class="moeda">Moeda</p>
+                <p id="from-currency-rate" class="currency-rate"></p>
+                <p class="valor" id="converter">---</p>
+            </div>
+
+            <img class="seta" src="./assets/seta.png" alt="seta">
+            <div class="currency-box">
+                <img id="currency-image" class="currency-img" src="./assets/placeholder.png" alt="moeda-convertida">
+                <p class="moeda" id="currency-name">Moeda</p>
+                <p id="to-currency-rate" class="currency-rate"></p>
+                <div class="value-container">
+                    <p class="valor" id="convertido">---</p>                    
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+
+</html>

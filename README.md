@@ -57,4 +57,5 @@ Este projeto foi feito com fins educacionais.
 
 🙋‍♂️ Autor
 Desenvolvido por Jardson
-[Seu LinkedIn] (www.linkedin.com/in/jardsonflorentino)  | [Seu GitHub] (https://github.com/JardsonFlorentino)
+
+[Meu LinkedIn](https://www.linkedin.com/in/jardsonflorentino) | [Meu GitHub](https://github.com/JardsonFlorentino)

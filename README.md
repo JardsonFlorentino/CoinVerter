@@ -18,7 +18,7 @@ Ele facilita a conversão de valores entre diferentes moedas, utilizando cotaç�
 
 ## 📸 Capturas de Tela
 
-![preview-desktop](./assets/preview.png)
+![preview-desktop](./assets/preview.jpg)
 
 ---
 
@@ -35,21 +35,21 @@ Ele facilita a conversão de valores entre diferentes moedas, utilizando cotaç�
 
 1. Clone o repositório:
    ```bash
-   git clone git clone (https://github.com/JardsonFlorentino/Conversor-de-Moedas--Responsivo.git)
+   git clone https://github.com/JardsonFlorentino/Conversor-de-Moedas--Responsivo.git
 
 Abra o arquivo index.html no seu navegador.
 
-📁 Estrutura de Pastas
-pgsql
-Copiar
-Editar
-/
+## 📁 Estrutura de Pastas
+
+```
 ├── index.html
 ├── style.css
 ├── script.js
 ├── assets/
-│   ├── preview.png
-│   └── icons, flags etc.
+│ ├── preview.jpg
+│ └── icons, flags etc.
+```
+
 
 📌 Observações
 As taxas de câmbio são obtidas diretamente da API do Banco Central do Brasil.

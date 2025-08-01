@@ -18,7 +18,7 @@ Ele facilita a conversão de valores entre diferentes moedas, utilizando cotaç�
 
 ## 📸 Capturas de Tela
 
-![preview-desktop](./assets/preview.png)
+![preview-desktop](./assets/preview.jpg)
 
 ---
 

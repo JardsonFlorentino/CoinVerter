@@ -35,7 +35,8 @@ Ele facilita a conversão de valores entre diferentes moedas, utilizando cotaç�
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/JardsonFlorentino/Conversor-de-Moedas--Responsivo]
+   git clone git clone https://github.com/JardsonFlorentino/Conversor-de-Moedas--Responsivo.git
+
 Abra o arquivo index.html no seu navegador.
 
 📁 Estrutura de Pastas

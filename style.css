@@ -104,15 +104,15 @@ section {
 
 .seta {
     margin: 0 15px;
-    width: 40px;     
+    width: 40px;
 }
 
 .swap-button {
-   margin: 0 auto 0px;
+    margin: 0 auto 0px;
     width: 40px;
     cursor: pointer;
     background: none;
-    border: none;    
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,15 +157,15 @@ input {
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
     appearance: textfield;
 }
-    
+
 .currency-box {
     display: flex;
     flex-direction: column;
@@ -192,7 +192,8 @@ input:disabled {
     cursor: not-allowed;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: #4FC3F7;
 }
 

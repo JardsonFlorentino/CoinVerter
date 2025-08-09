@@ -112,7 +112,6 @@ async function getAndSetRates() {
     valueInput.disabled = true;
 
     try {
-        // Usando a API "Awesome TSM" que é mais simples e tem ótima compatibilidade (CORS)
         const url = `https://economia.awesomeapi.com.br/json/all`;
         const response = await fetch(url);
 
@@ -124,8 +123,6 @@ async function getAndSetRates() {
 
         for (const key in currencies) {
             const currencyCode = currencies[key].code;
-            // A API retorna as cotações em relação ao Real (BRL).
-            // O 'bid' é o preço de compra, que usaremos para a conversão.
             if (awesomeRates[currencyCode]) {
                 currencies[key].rate = parseFloat(awesomeRates[currencyCode].bid);
             }

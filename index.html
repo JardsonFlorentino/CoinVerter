@@ -19,76 +19,66 @@
     <img class="logo" src="./assets/logo.png" alt="logo-convert-money">
 
     <main autocomplete="off">
-        <label>
-            Converter <strong>de</strong>
-        </label>
-        <div class="select-container">
-            <label>
-                <select id="select-from">
-                    <option value="" disabled selected>Selecione uma moeda</option>
-                    <option value="cedi-ganes"> ₵ Cedi Ganês</option>
-                    <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
-                    <option value="dolar"> US$ Dólar Americano</option>
-                    <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
-                    <option value="euro"> € Euro</option>
-                    <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
-                    <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
-                    <option value="iene-japones"> ¥ Iene Japonês</option>
-                    <option value="kip-laociano"> ₭ Kip Laociano</option>
-                    <option value="lari-georgiano"> ₾ Lari Georgiano</option>
-                    <option value="libra"> £ Libra Esterlina</option>
-                    <option value="lira-turca"> ₺ Lira Turca</option>
-                    <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
-                    <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
-                    <option value="peso-argentino"> ₱ Peso Argentino</option>
-                    <option value="peso-filipino"> ₱ Peso Filipino</option>
-                    <option value="real"> R$ Real Brasileiro</option>
-                    <option value="riel-cambojano"> ៛ Riel Cambojano</option>
-                    <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
-                    <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
-                    <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
-                    <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
-                </select>
-            </label>
-            <img src="./assets/swap-icon.png" alt="Inverter moedas" id="swap-button" class="swap-button">
+        <label for="select-from">Converter <strong>de</strong></label>
+        <select id="select-from">
+            <option value="" disabled selected>Selecione uma moeda</option>
+            <option value="cedi-ganes"> ₵ Cedi Ganês</option>
+            <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
+            <option value="dolar"> US$ Dólar Americano</option>
+            <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
+            <option value="euro"> € Euro</option>
+            <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
+            <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
+            <option value="iene-japones"> ¥ Iene Japonês</option>
+            <option value="kip-laociano"> ₭ Kip Laociano</option>
+            <option value="lari-georgiano"> ₾ Lari Georgiano</option>
+            <option value="libra"> £ Libra Esterlina</option>
+            <option value="lira-turca"> ₺ Lira Turca</option>
+            <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
+            <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
+            <option value="peso-argentino"> ₱ Peso Argentino</option>
+            <option value="peso-filipino"> ₱ Peso Filipino</option>
+            <option value="real"> R$ Real Brasileiro</option>
+            <option value="riel-cambojano"> ៛ Riel Cambojano</option>
+            <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
+            <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
+            <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
+            <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
+        </select>
 
-            <label>
-                Converter <strong>para</strong>
-            </label>
+        <button id="swap-button" class="swap-button" type="button" title="Inverter moedas">
+            <img src="./assets/swap-icon.png" alt="Inverter">
+        </button>
 
-            <label>
-                <select id="select-to" class="select-conversao">
-                    <option value="" disabled selected>Selecione uma moeda</option>
-                    <option value="cedi-ganes"> ₵ Cedi Ganês</option>
-                    <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
-                    <option value="dolar"> US$ Dólar Americano</option>
-                    <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
-                    <option value="euro"> € Euro</option>
-                    <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
-                    <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
-                    <option value="iene-japones"> ¥ Iene Japonês</option>
-                    <option value="kip-laociano"> ₭ Kip Laociano</option>
-                    <option value="lari-georgiano"> ₾ Lari Georgiano</option>
-                    <option value="libra"> £ Libra Esterlina</option>
-                    <option value="lira-turca"> ₺ Lira Turca</option>
-                    <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
-                    <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
-                    <option value="peso-argentino"> ₱ Peso Argentino</option>
-                    <option value="peso-filipino"> ₱ Peso Filipino</option>
-                    <option value="real"> R$ Real Brasileiro</option>
-                    <option value="riel-cambojano"> ៛ Riel Cambojano</option>
-                    <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
-                    <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
-                    <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
-                    <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
-                </select>
-            </label>
-        </div>
+        <label for="select-to">Converter <strong>para</strong></label>
+        <select id="select-to">
+            <option value="" disabled selected>Selecione uma moeda</option>
+            <option value="cedi-ganes"> ₵ Cedi Ganês</option>
+            <option value="colon-costarriquenho"> ₡ Colón Costarriquenho</option>
+            <option value="dolar"> US$ Dólar Americano</option>
+            <option value="dong-vietnamita"> ₫ Dong Vietnamita</option>
+            <option value="euro"> € Euro</option>
+            <option value="guarani-paraguaio"> ₲ Guarani Paraguaio</option>
+            <option value="hryvnia-ucraniana"> ₴ Hryvnia Ucraniana</option>
+            <option value="iene-japones"> ¥ Iene Japonês</option>
+            <option value="kip-laociano"> ₭ Kip Laociano</option>
+            <option value="lari-georgiano"> ₾ Lari Georgiano</option>
+            <option value="libra"> £ Libra Esterlina</option>
+            <option value="lira-turca"> ₺ Lira Turca</option>
+            <option value="manat-azerbaijano"> ₼ Manat Azerbaijano</option>
+            <option value="naira-nigeriana"> ₦ Naira Nigeriana</option>
+            <option value="peso-argentino"> ₱ Peso Argentino</option>
+            <option value="peso-filipino"> ₱ Peso Filipino</option>
+            <option value="real"> R$ Real Brasileiro</option>
+            <option value="riel-cambojano"> ៛ Riel Cambojano</option>
+            <option value="rupia-indiana"> ₹ Rúpia Indiana</option>
+            <option value="tenge-cazaque"> ₸ Tenge Cazaque</option>
+            <option value="tugrik-mongol"> ₮ Tugrik Mongol</option>
+            <option value="won-sul-coreano"> ₩ Won Sul-Coreano</option>
+        </select>
 
-        <label for="input-value">
-            Valor
-            <input id="input-value" class="input-valor-conversao" type="number" placeholder="Digite o valor">
-        </label>
+        <label for="input-value">Valor</label>
+        <input id="input-value" class="input-valor-conversao" type="number" placeholder="Digite o valor">
 
         <button class="convert-button" type="button">Converter</button>
 

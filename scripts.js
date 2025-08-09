@@ -104,59 +104,34 @@ function swapCurrencies() {
     currencySelectTo.dispatchEvent(new Event('change'));
 }
 
-function getFormattedDate(date) {
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${month}-${day}-${year}`;
-}
-
 async function getAndSetRates() {
     const loadingMessage = document.getElementById("loading-message");
 
-    loadingMessage.textContent = 'Buscando cotações oficiais...';
+    loadingMessage.textContent = 'Buscando cotações atualizadas...';
     convertButton.disabled = true;
     valueInput.disabled = true;
 
     try {
-        let ratesData = null;
-        let attempts = 0;
-        const maxAttempts = 7;
+        // Usando a API "Awesome TSM" que é mais simples e tem ótima compatibilidade (CORS)
+        const url = `https://economia.awesomeapi.com.br/json/all`;
+        const response = await fetch(url);
 
-        while (!ratesData && attempts < maxAttempts) {
-            const date = new Date();
-            date.setDate(date.getDate() - attempts);
-            const formattedDate = getFormattedDate(date);
-
-            const url = `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(dataCotacao=@dataCotacao)?@dataCotacao='${formattedDate}'&$format=json`;
-
-            const response = await fetch(url);
-            if (response.ok) {
-                const data = await response.json();
-                if (data.value && data.value.length > 0) {
-                    ratesData = data.value;
-                }
-            }
-            attempts++;
+        if (!response.ok) {
+            throw new Error('Falha ao buscar dados da API.');
         }
 
-        if (!ratesData) {
-            throw new Error('Não foi possível obter as cotações do Banco Central nos últimos 7 dias.');
-        }
-
-        const bcbRates = ratesData.reduce((acc, currency) => {
-            acc[currency.simbolo] = currency.cotacaoVenda;
-            return acc;
-        }, {});
+        const awesomeRates = await response.json();
 
         for (const key in currencies) {
             const currencyCode = currencies[key].code;
-            if (bcbRates[currencyCode]) {
-                currencies[key].rate = bcbRates[currencyCode];
+            // A API retorna as cotações em relação ao Real (BRL).
+            // O 'bid' é o preço de compra, que usaremos para a conversão.
+            if (awesomeRates[currencyCode]) {
+                currencies[key].rate = parseFloat(awesomeRates[currencyCode].bid);
             }
         }
 
-        console.log('Cotações do Banco Central atualizadas com sucesso!');
+        console.log('Cotações da Awesome API atualizadas com sucesso!');
         loadingMessage.textContent = 'Cotações atualizadas!';
         setTimeout(() => { loadingMessage.textContent = ''; }, 3000);
 
@@ -173,7 +148,6 @@ async function getAndSetRates() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const swapButton = document.getElementById('swap-button');
-    const copyButton = document.getElementById('copy-button');
 
     valueInput.value = '';
     currencySelectFrom.selectedIndex = 0;
@@ -183,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currencySelectTo.addEventListener("change", () => updateCurrencyUI(currencySelectTo, "currency-name", "currency-image", "to-currency-rate"));
     currencySelectFrom.addEventListener("change", () => updateCurrencyUI(currencySelectFrom, "from-currency-name", "from-currency-image", "from-currency-rate"));
     swapButton.addEventListener('click', swapCurrencies);
-    copyButton.addEventListener('click', copyToClipboard);
 
     getAndSetRates();
 });
